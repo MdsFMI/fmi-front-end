@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import {CampaignService} from "../services/CampaignService";
 
 
 
@@ -32,27 +33,24 @@ export class CampaignsComponent implements OnInit {
 
   campaigns!: Campaign[];
   headElements = ['Id', 'Description', 'Goal', 'Current amount', 'Action'];
-  constructor() {
+  constructor(private campaignService:CampaignService) {
   }
-  getCampaigns() {
-    /*
-    this.httpClient.get<any>('http://localhost').subscribe(
-      response => {
-        //console.log(response);
-        this.campaigns = response;
-      }
-    );
 
-     */
-  }
+
   ngOnInit(): void {
+
+    this.campaignService.getAllCampaigns().subscribe(data=>{
+      this.campaigns=data;
+      console.log(data);
+    })
+
     //this.getCampaigns();
-    let camps : any = [];
-    for (let i = 1; i <= 15; i++) {
-      camps.push({ id: i, description: 'campaign ' + i, campaignGoal: i * 500, currentAmount: i * 100 });
-    }
-    this.campaigns = camps;
-    console.log(this.campaigns)
+    // let camps : any = [];
+    // for (let i = 1; i <= 15; i++) {
+    //   camps.push({ id: i, description: 'campaign ' + i, campaignGoal: i * 500, currentAmount: i * 100 });
+    // }
+    // this.campaigns = camps;
+    // console.log(this.campaigns)
 
   }
 
