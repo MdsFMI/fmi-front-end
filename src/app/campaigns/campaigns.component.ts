@@ -31,7 +31,7 @@ export class Campaign {
 export class CampaignsComponent implements OnInit {
 
   campaigns!: Campaign[];
-  headElements = ['Id', 'Description', 'Goal', 'Current amount'];
+  headElements = ['Id', 'Description', 'Goal', 'Current amount', 'Action'];
   constructor() {
   }
   getCampaigns() {
