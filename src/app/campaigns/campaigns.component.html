@@ -1,1 +1,17 @@
-<p>campaigns works!</p>
+<div class="container">
+  <table mdbTable hover="true">
+    <thead>
+    <tr>
+      <th *ngFor="let head of headElements" scope="col">{{ head }} </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr mdbTableCol *ngFor="let campaign of campaigns">
+      <th scope="row">{{ campaign.id }}</th>
+      <td>{{ campaign.description }}</td>
+      <td>{{ campaign.campaignGoal }}</td>
+      <td>{{ campaign.currentAmount }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

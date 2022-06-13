@@ -11,14 +11,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CampaignsComponent } from './campaigns/campaigns.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
-
+import { WavesModule, TableModule, IconsModule, MDBBootstrapModule } from 'angular-bootstrap-md';
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     CampaignsComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,7 +26,11 @@ import { LoginComponent } from './login/login.component';
     BrowserAnimationsModule,
     MatToolbarModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    WavesModule,
+    TableModule,
+    IconsModule,
+    MDBBootstrapModule
   ],
   providers: [],
   bootstrap: [AppComponent]
