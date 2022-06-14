@@ -4,6 +4,7 @@ import {CampaignService} from "../services/CampaignService";
 import {User} from "../model/users";
 import {Campaign} from "../model/campaign";
 
+
 @Component({
   selector: 'app-create-campaign',
   templateUrl: './create-campaign.component.html',

@@ -21,7 +21,7 @@
       <td>
         <button class="btn btn-sm btn-info">
           <i class="fa fa-search"></i>Details</button>
-        <button class="btn btn-sm btn-warning">
+        <button class="btn btn-sm btn-warning" (click)="openEdit(contentEdit, campaign)">
           <i class="fa fa-edit"></i>Edit</button>
         <button class="btn btn-sm btn-danger" (click)="onDelete(campaign.id)">
           <i class="fa fa-remove"></i>Delete</button>
@@ -30,3 +30,31 @@
     </tbody>
   </table>
 </div>
+
+<ng-template #contentEdit let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Edit campaign</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="editForm" #edf="ngForm" (ngSubmit)="onSubmitEdits()" novalidate>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <div class="input-group">
+          <textarea id="description" class="form-control" formControlName="description" > </textarea>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="goal">Campaign goal</label>
+        <div class="input-group">
+          <input type="number" id="goal" class="form-control" formControlName="goal" >
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="onSubmitEdits()">Save changes</button>
+  </div>
+</ng-template>
