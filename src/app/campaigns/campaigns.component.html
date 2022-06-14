@@ -1,7 +1,10 @@
 <div class="container">
   <div class="border">
-    <button class="btn btn-md btn-outline-primary">
-      <i class="fa fa-plus"></i>New Campaign</button>
+    <a routerLink="/campaigns/create">
+      <button class="btn btn-md btn-outline-primary">
+        <i class="fa fa-plus"></i>New Campaign</button>
+    </a>
+
   </div>
   <table mdbTable hover="true">
     <thead>
@@ -12,15 +15,15 @@
     <tbody>
     <tr mdbTableCol *ngFor="let campaign of campaigns">
       <th scope="row">{{ campaign.id }}</th>
-      <td>{{ campaign.description }}</td>
+      <td>{{ campaign.descritpion }}</td>
       <td>{{ campaign.campaignGoal }}</td>
-      <td>{{ campaign.currentAmount }}</td>
+      <td>{{ campaign.currentAmmount }}</td>
       <td>
         <button class="btn btn-sm btn-info">
           <i class="fa fa-search"></i>Details</button>
         <button class="btn btn-sm btn-warning">
           <i class="fa fa-edit"></i>Edit</button>
-        <button class="btn btn-sm btn-danger">
+        <button class="btn btn-sm btn-danger" (click)="onDelete(campaign.id)">
           <i class="fa fa-remove"></i>Delete</button>
       </td>
     </tr>

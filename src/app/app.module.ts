@@ -13,6 +13,11 @@ import { CampaignsComponent } from './campaigns/campaigns.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { WavesModule, TableModule, IconsModule, MDBBootstrapModule } from 'angular-bootstrap-md';
+import { CreateCampaignComponent } from './create-campaign/create-campaign.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import { UsersComponent } from './users/users.component';
+// @ts-ignore
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +25,8 @@ import { WavesModule, TableModule, IconsModule, MDBBootstrapModule } from 'angul
     CampaignsComponent,
     HomeComponent,
     LoginComponent,
+    CreateCampaignComponent,
+    UsersComponent
   ],
   imports: [
     HttpClientModule,
@@ -32,9 +39,13 @@ import { WavesModule, TableModule, IconsModule, MDBBootstrapModule } from 'angul
     WavesModule,
     TableModule,
     IconsModule,
-    MDBBootstrapModule
+    MDBBootstrapModule,
+    FormsModule,
+    MatFormFieldModule,
+    ReactiveFormsModule
   ],
   providers: [
+
     ],
   bootstrap: [AppComponent]
 })
