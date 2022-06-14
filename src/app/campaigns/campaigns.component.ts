@@ -1,35 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {CampaignService} from "../services/CampaignService";
-import {User} from "../users/users.component";
+import {Campaign} from "../model/campaign";
 
-
-
-export class Campaign {
-  id!: string;
-  descritpion!: string;
-  campaignGoal!: number;
-  currentAmmount: number = 0;
-  requester!: User;
-  /*
-  constructor(
-    id: string,
-    description: string,
-    campaignGoal: number,
-    currentAmount: number,
-    requester: User
-
-  ) {
-    this.id = id;
-    this.descritpion = description;
-    this.campaignGoal = campaignGoal;
-    this.currentAmmount = currentAmount;
-    this.requester = requester;
-  }
-  */
-
-
-}
 
 @Component({
   selector: 'app-campaigns',

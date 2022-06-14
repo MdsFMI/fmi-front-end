@@ -1,7 +1,7 @@
 import {Observable} from "rxjs";
-import {Campaign} from "../campaigns/campaigns.component";
 import {HttpClient} from "@angular/common/http";
 import {Injectable} from "@angular/core";
+import {Campaign} from "../model/campaign";
 
 @Injectable({
   providedIn: 'root'
