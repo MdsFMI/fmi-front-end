@@ -6,9 +6,9 @@ import {CampaignService} from "../services/CampaignService";
 
 export class Campaign {
   id: string;
-  description: string;
+  descritpion: string;
   campaignGoal: number;
-  currentAmount: number;
+  currentAmmount: number;
   constructor(
     id: string,
     description: string,
@@ -17,9 +17,9 @@ export class Campaign {
 
   ) {
     this.id = id;
-    this.description = description;
+    this.descritpion = description;
     this.campaignGoal = campaignGoal;
-    this.currentAmount = currentAmount;
+    this.currentAmmount = currentAmount;
   }
 }
 
