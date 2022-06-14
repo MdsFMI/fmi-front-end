@@ -1,28 +1,35 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {CampaignService} from "../services/CampaignService";
+import {User} from "../users/users.component";
 
 
 
 export class Campaign {
-  id: string;
-  descritpion: string;
-  campaignGoal: number;
-  currentAmmount: number;
+  id!: string;
+  descritpion!: string;
+  campaignGoal!: number;
+  currentAmmount: number = 0;
+  requester!: User;
+  /*
   constructor(
     id: string,
     description: string,
     campaignGoal: number,
-    currentAmount: number
+    currentAmount: number,
+    requester: User
 
   ) {
     this.id = id;
     this.descritpion = description;
     this.campaignGoal = campaignGoal;
     this.currentAmmount = currentAmount;
+    this.requester = requester;
   }
-}
+  */
 
+
+}
 
 @Component({
   selector: 'app-campaigns',
@@ -38,20 +45,25 @@ export class CampaignsComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.initData();
 
+  }
+
+  initData() {
     this.campaignService.getAllCampaigns().subscribe(data=>{
       this.campaigns=data;
       console.log(data);
     })
-
-    //this.getCampaigns();
-    // let camps : any = [];
-    // for (let i = 1; i <= 15; i++) {
-    //   camps.push({ id: i, description: 'campaign ' + i, campaignGoal: i * 500, currentAmount: i * 100 });
-    // }
-    // this.campaigns = camps;
-    // console.log(this.campaigns)
-
   }
 
+  onDelete(campaignId: string) {
+    this.campaignService.deleteCampaignById(campaignId).subscribe(data=>{
+      console.log(data);
+      this.initData();
+    }, error => {
+      console.log(error);
+    });
+    console.log(campaignId);
+    console.log("clicked");
+  }
 }
