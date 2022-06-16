@@ -19,6 +19,9 @@ export class CampaignsComponent implements OnInit {
     'description': new FormControl(),
     'goal': new FormControl()
   })
+  donationForm = new FormGroup({
+    'amountToDonate': new FormControl()
+  });
   constructor(private campaignService:CampaignService, private modalService:NgbModal) {
   }
 
@@ -69,4 +72,22 @@ export class CampaignsComponent implements OnInit {
     this.modalService.dismissAll();
   }
 
+  onSubmitDonation() {
+    this.selectedCampaign.currentAmmount += this.donationForm.value.amountToDonate;
+    this.campaignService.updateCampaign(this.selectedCampaign, this.selectedCampaign.id).subscribe(data => {
+      console.log(data);
+      this.initData();
+    }, error => {
+      console.log(error);
+    });
+    this.modalService.dismissAll();
+  }
+
+  openDetails(targetModal: any, campaign: Campaign) {
+    this.modalService.open(targetModal, {
+      backdrop: 'static',
+      size: 'lg'
+    });
+    this.selectedCampaign = campaign;
+  }
 }
