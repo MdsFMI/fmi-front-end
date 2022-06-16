@@ -3,6 +3,7 @@ import {FormControl, FormGroup, NgForm} from "@angular/forms";
 import {CampaignService} from "../services/CampaignService";
 import {User} from "../model/users";
 import {Campaign} from "../model/campaign";
+import {Router} from "@angular/router"
 
 
 @Component({
@@ -18,7 +19,7 @@ export class CreateCampaignComponent implements OnInit {
     'description': new FormControl(),
     'goal': new FormControl()
   })
-  constructor(private campaignService: CampaignService) { }
+  constructor(private campaignService: CampaignService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -30,5 +31,7 @@ export class CreateCampaignComponent implements OnInit {
       this.dummyCampaign = data;
     }))
     console.log(this.dummyCampaign);
+    this.router.navigate(['campaigns'])
+
   }
 }

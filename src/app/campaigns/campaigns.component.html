@@ -76,15 +76,15 @@
     <app-progressbar [valueNow]="selectedCampaign.currentAmmount" [valueFinal]="this.selectedCampaign.campaignGoal"></app-progressbar>
     <form [formGroup]="donationForm">
       <div class="form-group">
-        <label for="donationAmount">Campaign goal</label>
+        <label for="donationAmount">Enter amount you want to donate</label>
         <div class="input-group">
           <input type="number" id="donationAmount" class="form-control" formControlName="amountToDonate" >
-          <button type="button" class="btn btn-danger" (click)="onSubmitDonation()">Donate</button>
+          <button type="button" class="btn btn-success" (click)="onSubmitDonation()">Donate</button>
         </div>
       </div>
     </form>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-outline-dark" (click)="modal.dismiss()">Cancel</button>
+    <button type="button" class="btn btn-danger" (click)="modal.dismiss()">Cancel</button>
   </div>
 </ng-template>

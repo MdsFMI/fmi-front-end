@@ -18,6 +18,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import { UsersComponent } from './users/users.component';
 import { ProgressbarComponent } from './progressbar/progressbar.component';
+import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
+import {CarouselModule} from "ngx-bootstrap/carousel";
 // @ts-ignore
 @NgModule({
   declarations: [
@@ -44,7 +46,9 @@ import { ProgressbarComponent } from './progressbar/progressbar.component';
     MDBBootstrapModule,
     FormsModule,
     MatFormFieldModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule,
+    CarouselModule.forRoot()
   ],
   providers: [
 
