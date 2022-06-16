@@ -17,6 +17,7 @@ import { CreateCampaignComponent } from './create-campaign/create-campaign.compo
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import { UsersComponent } from './users/users.component';
+import { ProgressbarComponent } from './progressbar/progressbar.component';
 // @ts-ignore
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { UsersComponent } from './users/users.component';
     HomeComponent,
     LoginComponent,
     CreateCampaignComponent,
-    UsersComponent
+    UsersComponent,
+    ProgressbarComponent
   ],
   imports: [
     HttpClientModule,
